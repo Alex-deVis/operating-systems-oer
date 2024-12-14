@@ -32,3 +32,11 @@ jobs:
         uses: open-education-hub/actions/spellcheck@main
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  solutions-CI:
+    name: Solutions CI
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Solutions CI
+        run: ./util/test-gen-lab-support.sh
